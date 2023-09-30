@@ -4,7 +4,7 @@ import KeyBoard from "./KeyBoard";
 
 export default function Calculator() {
     return (
-        <div className="Calculator">
+        <div className="calculator-grid">
             <Screen />
             <KeyBoard />
         </div>

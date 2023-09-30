@@ -1,8 +1,11 @@
-* {
-    margin: 0;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-.Calculator {
+body {
+    margin: 0;
     background: rgb(2, 0, 36);
     background: linear-gradient(
         90deg,
@@ -10,53 +13,51 @@
         rgba(68, 68, 163, 1) 0%,
         rgba(0, 212, 255, 1) 99%
     );
+}
+
+.calculator-grid {
+    display: grid;
+    margin-top: 2rem;
+    grid-template-columns: repeat(4, 6rem);
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+    justify-content: center;
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid rgb(72, 70, 70);
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.calculator-grid > button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.answer {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: rgba(142, 100, 182, 0.9);
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
-    text-align: center;
-    width: 40vw;
-    border: 4px solid #000;
-    margin: 0 auto;
-    margin-top: 100px;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 0.75rem;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
-.KeyBoard {
-    text-align: center;
+.output .previous-operand {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.5rem;
 }
 
-button {
-    background-color: white;
-    height: 50px;
-    width: 25%;
-    /* font-weight: bold; */
-    font-size: 2rem;
-    margin-bottom: 3px;
-    /* margin-right: 3px; */
-}
-
-.Delete {
-    background-color: red;
-    width: 25%;
-}
-
-.Clear {
-    background-color: yellow;
-    width: 25%;
-}
-
-.Answer {
-    width: 50%;
-}
-
-.Screen {
-    background-color: rgba(142, 100, 182, 0.674);
-    border-bottom: solid black;
-    height: 80px;
-    display: flex;
-    flex-direction: row;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.output .current-operand {
+    color: white;
+    font-size: 2.5rem;
 }
