@@ -1,5 +1,7 @@
 export default function Screen() {
     return (
-        <h1>Hello</h1>
+        <div className="Screen">
+            <h1>0</h1>
+        </div>
     );
 }
