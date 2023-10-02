@@ -1,9 +1,10 @@
 // import Calculator from "./Calculator";
 
-export default function KeyBoard({ onClick }) {
+export default function KeyBoard({ onClickFirst, onClickSecond }) {
     const handleClick = (e) => {
         const x = e.target;
-        onClick(x);
+        onClickFirst(x);
+        onClickSecond(x);
     };
 
     return (
